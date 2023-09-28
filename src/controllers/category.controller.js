@@ -42,6 +42,25 @@ const getCategoryList = async (req, res) => {
   }
 };
 
+/** get categoyry count */
+const createCount = async (req, res) => {
+  try {
+    const reqBody = req.body;
+    const category = await categoryService.createCount(reqBody);
+    if (!category) {
+      throw new Error("Something went wrong, please try again or later!");
+    }
+    res.status(200).json({
+      success: true,
+      message: "Category create successfully!",
+      data: { reqBody },
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message:  error.message});
+  }
+};
+
+
 /** Delete category */
 const deleteCategory = async (req, res) => {
   try {
@@ -83,6 +102,7 @@ const updateCategory = async (req, res) => {
 module.exports = {
   createCategory,
   getCategoryList,
+  createCount,
   deleteCategory,
   updateCategory
 };

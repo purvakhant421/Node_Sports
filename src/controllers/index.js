@@ -9,3 +9,4 @@ module.exports.teamController = require("./team.controller");
 module.exports.playerController = require("./player.controller");
 module.exports.eventController = require("./event.controller");
 module.exports.newsController = require("./news.controller");
+module.exports.bannerController = require("./banner.controller");

@@ -7,4 +7,5 @@ module.exports.Team = require("./team");
 module.exports.Player = require("./player");
 module.exports.Event = require("./event");
 module.exports.News = require("./news.js");
+module.exports.News = require("./banner.js");
 

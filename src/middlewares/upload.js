@@ -6,12 +6,12 @@ const { log } = require("console");
 /** Image upload using disk storage */
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    if (file.fieldname == "product_image") {
+    if (file.fieldname == "sports_image") {
       console.log(__dirname,'__dirname');
-      fs.mkdirSync(path.join(__dirname, "../public/product_images"), {
+      fs.mkdirSync(path.join(__dirname, "../public/sports_image"), {
         recursive: true,
       });
-      cb(null, path.join(__dirname, "../public/product_images"));
+      cb(null, path.join(__dirname, "../public/sports_image"));
     }
   },
   filename: function (req, file, cb) {

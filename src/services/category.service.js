@@ -21,6 +21,11 @@ const getCategoryById = async (categoryId) => {
   return Category.findById(categoryId);
 };
 
+// get category count
+const getCategoryCount =async (category_count) =>{
+  return Category.findByCount(category_count);
+}
+
 // update Category
 const updateDetails = async (categoryId, reqBody) => {
   return Category.findByIdAndUpdate(categoryId, { $set: reqBody });
@@ -36,6 +41,7 @@ module.exports = {
     getCategoryList,
     getCategoryByName,
     getCategoryById,
+    getCategoryCount,
     updateDetails,
     deleteCategory
 }
